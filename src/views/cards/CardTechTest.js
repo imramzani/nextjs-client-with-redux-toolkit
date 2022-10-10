@@ -8,12 +8,11 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import CardMedia from '@mui/material/CardMedia'
-import IconButton from '@mui/material/IconButton'
 
 
 import CartPlus from 'mdi-material-ui/CartPlus'
 
-import { useSelector, useDispatch, } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { selectData, getDataError, getDataStatus } from 'src/store/slice'
 
 const CardTechTest = () => {
@@ -25,7 +24,7 @@ const CardTechTest = () => {
   const phones = data.products.map((phone) => {
     const phoneTag = phone.id
     return (
-      <Card >
+      <Card item sx={{ marginBottom: 3, marginRight: 3 }} >
         <CardMedia sx={{ height: '14.5625rem' }} image={phone.thumbnail} />
         <CardHeader title={phone.title} />
         <CardContent>
@@ -42,11 +41,10 @@ const CardTechTest = () => {
           </Typography>
         </CardActions>
         <CardActions className='card-action-dense'>
-
           <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
             <Button>
               <CartPlus fontSize='small' sx={{ marginRight: 2}} />
-              Add to Card
+              Add to Cart
             </Button>
           </Box>
         </CardActions>
